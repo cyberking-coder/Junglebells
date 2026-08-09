@@ -28,7 +28,7 @@ export function SplitLine({ text, className = "", delay = 0, stagger = 0.055 }) 
       {words.map((word, i) => (
         <span
           key={`${word}-${i}`}
-          className="inline-block overflow-hidden align-bottom"
+          className="inline-block overflow-hidden align-bottom pb-[0.16em] -mb-[0.16em]"
           aria-hidden
         >
           <motion.span

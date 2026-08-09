@@ -85,7 +85,7 @@ export default function Hero() {
           </motion.p>
 
           <h1 className="font-display leading-[0.82]">
-            <span className="block overflow-hidden">
+            <span className="block overflow-hidden pb-[0.14em] -mb-[0.14em]">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
@@ -95,7 +95,7 @@ export default function Hero() {
                 JUNGLE
               </motion.span>
             </span>
-            <span className="block overflow-hidden">
+            <span className="block overflow-hidden pb-[0.14em] -mb-[0.14em]">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}

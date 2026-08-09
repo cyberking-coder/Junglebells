@@ -48,14 +48,14 @@ export default function Hero() {
       className="grain relative h-[100svh] min-h-[640px] w-full overflow-hidden"
     >
       <motion.div
-        style={{ y: bgY, scale: bgScale, x: deepX }}
+        style={{ y: bgY, scale: bgScale, x: deepX, willChange: "transform" }}
         className="absolute inset-0"
       >
         <Photo
           src={HERO_IMG}
           alt="Mist moving through a dense rainforest canopy at dawn"
           className="relative h-full w-full object-cover"
-          depth={1}
+          depth={0}
           fetchPriority="high"
         />
       </motion.div>
@@ -67,7 +67,7 @@ export default function Hero() {
 
       {/* Foreground frond frame — drawn, so it never depends on the network */}
       <motion.div
-        style={{ x: layerX, y: layerY }}
+        style={{ x: layerX, y: layerY, willChange: "transform" }}
         className="pointer-events-none absolute -inset-12 hidden md:block"
       >
         <ForestBackdrop frondsOnly depth={1} className="opacity-90" />

@@ -30,11 +30,11 @@ export default function Nav() {
       >
         <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
           <a href="#top" className="flex items-baseline gap-2">
-            <span className="font-display text-2xl tracking-tight">Jungle Bells</span>
+            <span className="whitespace-nowrap font-display text-2xl tracking-tight">Jungle Bells</span>
             <span className="h-1.5 w-1.5 rounded-full bg-amber" />
           </a>
 
-          <div className="hidden items-center gap-10 md:flex">
+          <div className="hidden items-center gap-10 lg:flex">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -56,7 +56,7 @@ export default function Nav() {
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className="flex flex-col gap-1.5 md:hidden"
+            className="flex flex-col gap-1.5 lg:hidden"
           >
             <span className="block h-px w-7 bg-bone" />
             <span className="block h-px w-7 bg-bone" />
@@ -71,7 +71,7 @@ export default function Nav() {
             animate={{ clipPath: "inset(0 0 0% 0)" }}
             exit={{ clipPath: "inset(0 0 100% 0)" }}
             transition={{ duration: 0.7, ease: EASE }}
-            className="fixed inset-0 z-[60] bg-moss px-6 py-6 md:hidden"
+            className="fixed inset-0 z-[60] bg-moss px-6 py-6 lg:hidden"
           >
             <div className="flex items-center justify-between">
               <span className="font-display text-2xl">Jungle Bells</span>

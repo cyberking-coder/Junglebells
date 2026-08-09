@@ -14,7 +14,7 @@ const items = [
 export default function Marquee() {
   const row = [...items, ...items];
   return (
-    <div className="edge-fade relative border-y border-bone/10 bg-moss py-5">
+    <div className="edge-fade relative overflow-hidden border-y border-bone/10 bg-moss py-5">
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{ duration: 28, repeat: Infinity, ease: "linear" }}

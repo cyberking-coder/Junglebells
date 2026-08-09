@@ -68,7 +68,7 @@ export default function Hero() {
       {/* Foreground frond frame — drawn, so it never depends on the network */}
       <motion.div
         style={{ x: layerX, y: layerY, willChange: "transform" }}
-        className="pointer-events-none absolute -inset-12 hidden md:block"
+        className="pointer-events-none absolute -inset-12 hidden overflow-hidden md:block"
       >
         <ForestBackdrop frondsOnly depth={1} className="opacity-90" />
       </motion.div>

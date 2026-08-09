@@ -20,8 +20,8 @@ export default function Ethos() {
 
   return (
     <section ref={ref} className="relative mx-auto max-w-[1400px] px-6 py-28 md:px-12 md:py-40">
-      <div className="grid gap-16 md:grid-cols-12 md:gap-12">
-        <div className="md:col-span-5">
+      <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-5">
           <Reveal>
             <Eyebrow>Inspired by nature</Eyebrow>
           </Reveal>
@@ -43,20 +43,9 @@ export default function Ethos() {
               walk in a stranger and leave in a group chat.
             </p>
           </Reveal>
-
-          <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-bone/10 pt-10">
-            {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08}>
-                <p className="font-display text-5xl text-bone md:text-6xl">{s.value}</p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-bone/45">
-                  {s.label}
-                </p>
-              </Reveal>
-            ))}
-          </div>
         </div>
 
-        <div className="md:col-span-7">
+        <div className="lg:col-span-7">
           <div className="relative aspect-[3/2] overflow-hidden rounded-sm">
             <Photo
               src={tiger}
@@ -78,6 +67,17 @@ export default function Ethos() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-bone/10 pt-12 md:mt-24 md:grid-cols-4">
+        {stats.map((s, i) => (
+          <Reveal key={s.label} delay={i * 0.08}>
+            <p className="font-display text-5xl text-bone md:text-6xl">{s.value}</p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-bone/45">
+              {s.label}
+            </p>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

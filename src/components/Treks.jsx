@@ -78,15 +78,15 @@ export default function Treks({ onBook }) {
             <Reveal key={t.id} delay={i * 0.05}>
               <div
                 onMouseEnter={() => setActive(i)}
-                className="group relative grid grid-cols-1 items-center gap-3 border-b border-bone/12 py-8 transition-colors duration-500 md:grid-cols-12 md:gap-6 md:py-10"
+                className="group relative grid grid-cols-1 items-center gap-3 border-b border-bone/12 py-8 transition-colors duration-500 lg:grid-cols-12 lg:gap-6 lg:py-10"
               >
                 <span className="absolute inset-0 -z-10 origin-bottom scale-y-0 bg-canopy/60 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100" />
 
-                <span className="hidden text-[11px] tracking-[0.2em] text-bone/35 md:col-span-1 md:block">
+                <span className="hidden text-[11px] tracking-[0.2em] text-bone/35 lg:col-span-1 lg:block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
-                <div className="md:col-span-4">
+                <div className="lg:col-span-4">
                   <h3 className="font-display text-3xl leading-tight transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
                     {t.name}
                   </h3>
@@ -95,19 +95,19 @@ export default function Treks({ onBook }) {
                   </p>
                 </div>
 
-                <p className="text-[13px] leading-relaxed text-bone/55 md:col-span-3">
+                <p className="text-[13px] leading-relaxed text-bone/55 lg:col-span-3">
                   {t.blurb}
                 </p>
 
-                <div className="grid grid-cols-2 gap-x-6 gap-y-3 md:col-span-2">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-3 lg:col-span-2">
                   <Meta k="Days" v={t.days} />
                   <Meta k="Grade" v={t.grade} />
                   <Meta k="Peak" v={t.altitude} />
                   <Meta k="Dates" v={t.dates} />
                 </div>
 
-                <div className="mt-4 flex items-center justify-between gap-6 md:col-span-2 md:mt-0 md:justify-end">
-                  <div className="text-right">
+                <div className="mt-4 flex items-center justify-between gap-6 lg:col-span-2 lg:mt-0 lg:justify-end">
+                  <div className="text-left lg:text-right">
                     <p className="font-display text-2xl">{inr(t.price)}</p>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-bone/40">
                       per person · {t.seats} seats left

@@ -22,6 +22,21 @@ npm run build
 npm run preview
 ```
 
+## Deploying to GitHub Pages
+
+`.github/workflows/deploy.yml` builds and publishes on every push to
+`claude/jungle-beels-website-av9g6b`.
+
+It needs Pages switched on once, by hand — `GITHUB_TOKEN` is not allowed to
+provision a Pages site:
+
+1. **Settings → Pages → Build and deployment → Source: GitHub Actions**
+2. Re-run the workflow (Actions → Deploy to GitHub Pages → Run workflow)
+
+The site then lands at `https://cyberking-coder.github.io/Junglebells/`. The
+`GITHUB_PAGES=true` env var in the workflow sets Vite's `base` to that
+subpath; local `dev`/`preview` stay at `/`.
+
 ## Structure
 
 ```

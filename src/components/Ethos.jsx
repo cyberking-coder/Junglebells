@@ -3,9 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Eyebrow, Reveal, SplitLine } from "./primitives";
 import Photo from "./Photo";
 import { stats } from "../data/treks";
-
-const IMG =
-  "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1800&q=80";
+// Imported rather than referenced by path so Vite fingerprints it and rewrites
+// the URL for the /Junglebells/ base on Pages. A bare "/tiger.jpg" string would
+// 404 there.
+import tiger from "../assets/tiger.jpg";
 
 export default function Ethos() {
   const ref = useRef(null);
@@ -13,7 +14,9 @@ export default function Ethos() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const imgY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
+  // Travel must stay under the overscan below (scale 1.18 => 9% spare each
+  // edge) or the parallax slides the photo off its own frame.
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
 
   return (
     <section ref={ref} className="relative mx-auto max-w-[1400px] px-6 py-28 md:px-12 md:py-40">
@@ -54,23 +57,23 @@ export default function Ethos() {
         </div>
 
         <div className="md:col-span-7">
-          <div className="relative h-[70vh] min-h-[420px] overflow-hidden rounded-sm">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-sm">
             <Photo
-              src={IMG}
-              alt="A trekker crossing a shallow river inside dense green forest"
+              src={tiger}
+              alt="Three tigers walking abreast down a grassy forest track"
               motionImg={motion.img}
-              style={{ y: imgY, scale: 1.2 }}
+              style={{ y: imgY, scale: 1.18 }}
               className="relative h-full w-full object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
               <p className="max-w-xs text-[13px] leading-relaxed text-bone/80">
-                Lead guide Mahesh Gowda has walked the Kudremukh ridge over two
-                hundred times. He still stops at the same tree.
+                A tigress and two sub-adult cubs on the fire line at dusk. We
+                watched from the vehicle for nine minutes and did not step down.
               </p>
               <span className="text-[10px] uppercase tracking-[0.3em] text-lichen/70">
-                12°N 75°E
+                Tadoba · 20°N 79°E
               </span>
             </div>
           </div>
